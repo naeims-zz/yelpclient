@@ -48,6 +48,7 @@ Time spent: `20`
 ### Walkthrough
 
 ![Video Walkthrough](anim_yelp.gif)
+
 [Landscape orientation video](anim_yelp_landscape.gif)
 
 
