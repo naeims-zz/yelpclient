@@ -25,8 +25,9 @@
     // table view
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 426; // parallax somehow doesn't work with automatic height :(
-    self.tableView.estimatedRowHeight = 426;
+    self.tableView.estimatedRowHeight = 20;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"DetailsCell" bundle:nil] forCellReuseIdentifier:@"DetailsCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -76,7 +77,6 @@
     DetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailsCell"];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
     [cell.ratingImageView setImageWithURL:[NSURL URLWithString:self.business.ratingImageUrl]];
     cell.nameLabel.text = self.business.name;
     cell.ratingLabel.text = [NSString stringWithFormat:@"%ld Reviews", self.business.numReviews];
